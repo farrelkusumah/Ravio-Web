@@ -1,14 +1,19 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, User, Bot, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, User, Bot, Sparkles, ChevronRight } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
+import Link from 'next/link';
 
 interface Message {
     id: string;
     text: string;
     sender: 'user' | 'bot';
     timestamp: Date;
+    link?: {
+        label: string;
+        href: string;
+    };
 }
 
 const Chatbot = () => {
@@ -106,12 +111,14 @@ const Chatbot = () => {
 
         // Dynamic response logic based on keywords or quick replies
         let responseKey = 'chatResponseHuman'; // Default
+        let link: { label: string; href: string } | undefined = undefined;
         const lowerText = userText.toLowerCase();
 
         if (lowerText.includes('track') || lowerText.includes('lacak') || lowerText.includes('追跡')) {
             responseKey = 'chatResponseTrack';
         } else if (lowerText.includes('size') || lowerText.includes('ukuran') || lowerText.includes('サイズ')) {
             responseKey = 'chatResponseSizing';
+            link = { label: 'Lihat Size Chart', href: '/size-chart' };
         } else if (lowerText.includes('store') || lowerText.includes('toko') || lowerText.includes('店舗')) {
             responseKey = 'chatResponseStore';
         } else if (lowerText.includes('help') || lowerText.includes('bantuan') || lowerText.includes('ヘルプ')) {
@@ -124,6 +131,7 @@ const Chatbot = () => {
                 text: t(responseKey as any),
                 sender: 'bot',
                 timestamp: new Date(),
+                link: link
             };
             setMessages(prev => [...prev, botMsg]);
             setIsTyping(false);
@@ -195,6 +203,18 @@ const Chatbot = () => {
                                         : 'bg-white border border-zinc-100 text-zinc-800 rounded-tl-none'
                                         }`}>
                                         {msg.text}
+                                        {msg.link && (
+                                            <div className="mt-4 pt-4 border-t border-zinc-50">
+                                                <Link
+                                                    href={msg.link.href}
+                                                    onClick={() => setIsOpen(false)}
+                                                    className="inline-flex items-center space-x-2 bg-accent text-white px-4 py-2.5 rounded-xl font-black uppercase tracking-widest text-[9px] hover:bg-zinc-900 transition-all shadow-lg"
+                                                >
+                                                    <span>{msg.link.label}</span>
+                                                    <ChevronRight size={12} />
+                                                </Link>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>

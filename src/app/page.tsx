@@ -144,6 +144,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Most Sold Products (Produk Terlaris) */}
+      <section className="bg-zinc-50 py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+            <div className="space-y-4">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent flex items-center space-x-2">
+                <Sparkles size={14} />
+                <span>HOT ITEMS</span>
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic">{t('topSellingItems')}</h2>
+            </div>
+            <Link href="/products" className="text-xs font-bold uppercase tracking-widest flex items-center space-x-2 text-accent border-b border-accent pb-1 hover:opacity-70 transition-opacity">
+              <span>{t('viewAll')}</span>
+              <ChevronRight size={16} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-10 animate-fade-in-up">
+            {[...PRODUCTS]
+              .sort((a, b) => b.soldCount - a.soldCount)
+              .slice(0, 4)
+              .map(product => (
+                <Link key={product.id} href={`/products/${product.id}`} className="group block space-y-3 sm:space-y-4 hover-lift p-2 -m-2 rounded-lg transition-all">
+                  <div className="aspect-[3/4] overflow-hidden bg-zinc-100 relative">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <div className="bg-accent text-white text-[8px] font-bold uppercase px-2 py-1 tracking-widest">
+                        BEST SELLER
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-widest text-muted">{product.category}</span>
+                    <h3 className="text-xs sm:text-sm font-bold uppercase tracking-tight italic group-hover:text-accent transition-colors truncate">{product.name}</h3>
+                    <div className="flex justify-between items-center pt-1">
+                      <p className="text-xs sm:text-sm font-bold">Rp {product.price.toLocaleString()}</p>
+                      <div className="flex items-center space-x-1.5 opacity-60">
+                        <ShoppingBag size={10} />
+                        <span className="text-[9px] font-bold uppercase">{product.soldCount}+ SOLD</span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+          </div>
+        </div>
+      </section>
+
       {/* Categories Cards */}
       <section className="max-w-7xl mx-auto px-4 animate-fade-in-up">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
