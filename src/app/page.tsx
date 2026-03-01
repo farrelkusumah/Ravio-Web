@@ -151,7 +151,7 @@ export default function Home() {
             <div className="space-y-4">
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent flex items-center space-x-2">
                 <Sparkles size={14} />
-                <span>HOT ITEMS</span>
+                <span>{t('hotItems')}</span>
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic">{t('topSellingItems')}</h2>
             </div>
@@ -174,7 +174,7 @@ export default function Home() {
                     />
                     <div className="absolute top-4 left-4">
                       <div className="bg-accent text-white text-[8px] font-bold uppercase px-2 py-1 tracking-widest">
-                        BEST SELLER
+                        {t('bestSeller')}
                       </div>
                     </div>
                   </div>
@@ -185,7 +185,7 @@ export default function Home() {
                       <p className="text-xs sm:text-sm font-bold">Rp {product.price.toLocaleString()}</p>
                       <div className="flex items-center space-x-1.5 opacity-60">
                         <ShoppingBag size={10} />
-                        <span className="text-[9px] font-bold uppercase">{product.soldCount}+ SOLD</span>
+                        <span className="text-[9px] font-bold uppercase">{product.soldCount}+ {t('soldItems')}</span>
                       </div>
                     </div>
                   </div>

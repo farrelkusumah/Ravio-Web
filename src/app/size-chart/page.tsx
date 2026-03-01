@@ -51,10 +51,10 @@ const SizeChartPage = () => {
                         <span>{t('home')}</span>
                     </Link>
                     <h1 className="text-4xl sm:text-6xl font-black tracking-tighter uppercase italic leading-none">
-                        Size <span className="text-accent underline decoration-accent/20">Chart</span>
+                        {t('sizeChartTitle').split(' ')[0]} <span className="text-accent underline decoration-accent/20">{t('sizeChartTitle').split(' ')[1]}</span>
                     </h1>
                     <p className="max-w-md text-sm sm:text-lg font-medium opacity-60 leading-relaxed uppercase tracking-tight">
-                        Temukan ukuran sempurna anda untuk kenyamanan maksimal setiap hari.
+                        {t('sizeChartDesc')}
                     </p>
                 </div>
             </div>
@@ -94,57 +94,106 @@ const SizeChartPage = () => {
                         <div className="space-y-8 animate-fade-in-up">
                             <div className="aspect-[4/5] bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-100 p-8 flex items-center justify-center relative group">
                                 <img
-                                    src="/size_chart_vectors.png"
+                                    src="/size_chart_letters.png"
                                     alt="Size Measurement Technical Drawing"
                                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                                 />
                                 <div className="absolute inset-0 border-4 border-accent/0 group-hover:border-accent/5 transition-all duration-700 rounded-2xl pointer-events-none" />
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
-                                    <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
-                                        <Info size={12} className="text-accent" />
-                                        <span>Body Length</span>
-                                    </h4>
-                                    <p className="text-[10px] text-muted font-medium italic">Diukur dari titik tertinggi bahu sampai ke bawah.</p>
-                                </div>
-                                <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
-                                    <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
-                                        <Info size={12} className="text-accent" />
-                                        <span>Body Width</span>
-                                    </h4>
-                                    <p className="text-[10px] text-muted font-medium italic">Diukur dari ketiak ke ketiak secara mendatar.</p>
-                                </div>
+                                {activeCategory === 'Tops' ? (
+                                    <>
+                                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
+                                            <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
+                                                <span className="w-5 h-5 bg-zinc-900 text-white flex items-center justify-center rounded text-[8px] transform -rotate-12">A</span>
+                                                <span>{t('bodyLength')}</span>
+                                            </h4>
+                                            <p className="text-[10px] text-muted font-medium italic">{t('bodyLengthDesc')}</p>
+                                        </div>
+                                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
+                                            <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
+                                                <span className="w-5 h-5 bg-zinc-900 text-white flex items-center justify-center rounded text-[8px] transform rotate-6">B</span>
+                                                <span>{t('bodyWidth')}</span>
+                                            </h4>
+                                            <p className="text-[10px] text-muted font-medium italic">{t('bodyWidthDesc')}</p>
+                                        </div>
+                                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
+                                            <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
+                                                <span className="w-5 h-5 bg-zinc-900 text-white flex items-center justify-center rounded text-[8px] transform -rotate-3">C</span>
+                                                <span>{t('shoulderWidth')}</span>
+                                            </h4>
+                                            <p className="text-[10px] text-muted font-medium italic">{t('shoulderWidthDesc')}</p>
+                                        </div>
+                                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
+                                            <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
+                                                <span className="w-5 h-5 bg-zinc-900 text-white flex items-center justify-center rounded text-[8px] transform rotate-12">D</span>
+                                                <span>{t('sleeveLength')}</span>
+                                            </h4>
+                                            <p className="text-[10px] text-muted font-medium italic">{t('sleeveLengthDesc')}</p>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
+                                            <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
+                                                <span className="w-5 h-5 bg-accent text-white flex items-center justify-center rounded text-[8px] transform -rotate-12">A</span>
+                                                <span>{t('waist')}</span>
+                                            </h4>
+                                            <p className="text-[10px] text-muted font-medium italic">{t('waistDesc')}</p>
+                                        </div>
+                                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
+                                            <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
+                                                <span className="w-5 h-5 bg-accent text-white flex items-center justify-center rounded text-[8px] transform rotate-6">B</span>
+                                                <span>{t('hip')}</span>
+                                            </h4>
+                                            <p className="text-[10px] text-muted font-medium italic">{t('hipDesc')}</p>
+                                        </div>
+                                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
+                                            <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
+                                                <span className="w-5 h-5 bg-accent text-white flex items-center justify-center rounded text-[8px] transform -rotate-3">C</span>
+                                                <span>{t('thigh')}</span>
+                                            </h4>
+                                            <p className="text-[10px] text-muted font-medium italic">{t('thighDesc')}</p>
+                                        </div>
+                                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 space-y-2">
+                                            <h4 className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest text-zinc-900">
+                                                <span className="w-5 h-5 bg-accent text-white flex items-center justify-center rounded text-[8px] transform rotate-12">D</span>
+                                                <span>{t('inseam')}</span>
+                                            </h4>
+                                            <p className="text-[10px] text-muted font-medium italic">{t('inseamDesc')}</p>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
 
                         {/* Table Area */}
                         <div className="space-y-10 animate-fade-in-up delay-100">
                             <div className="space-y-4">
-                                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-accent">TABEL DIMENSI (CM)</span>
+                                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-accent">{t('dimensionKey')}</span>
                                 <h3 className="text-3xl font-black tracking-tighter uppercase italic text-zinc-900">
-                                    {activeGender === 'Men' ? 'Pria' : 'Wanita'} - {activeCategory === 'Tops' ? 'Baju / Atasan' : 'Celana / Bawahan'}
+                                    {activeGender === 'Men' ? t('men') : t('women')} - {activeCategory === 'Tops' ? t('tops') : t('bottoms')}
                                 </h3>
                             </div>
 
                             <div className="overflow-hidden border border-zinc-100 rounded-2xl shadow-sm">
-                                <table className="w-full text-left text-xs uppercase tracking-widest font-bold">
+                                <table className="w-full text-left text-[10px] uppercase tracking-widest font-black">
                                     <thead className="bg-zinc-900 text-white">
                                         {activeCategory === 'Tops' ? (
                                             <tr>
-                                                <th className="px-6 py-5 italic">Size</th>
-                                                <th className="px-6 py-5 italic text-center">Length</th>
-                                                <th className="px-6 py-5 italic text-center">Width</th>
-                                                <th className="px-6 py-5 italic text-center">Shoulder</th>
-                                                <th className="px-6 py-5 italic text-center">Sleeve</th>
+                                                <th className="px-6 py-6 italic border-r border-white/10">{t('size')}</th>
+                                                <th className="px-4 py-6 italic text-center">A {t('bodyLength').split(' ')[1]}</th>
+                                                <th className="px-4 py-6 italic text-center">B {t('bodyWidth').split(' ')[1]}</th>
+                                                <th className="px-4 py-6 italic text-center">C {t('shoulderWidth').split(' ')[0]}</th>
+                                                <th className="px-4 py-6 italic text-center">D {t('sleeveLength').split(' ')[1]}</th>
                                             </tr>
                                         ) : (
                                             <tr>
-                                                <th className="px-6 py-5 italic">Size</th>
-                                                <th className="px-6 py-5 italic text-center">Waist</th>
-                                                <th className="px-6 py-5 italic text-center">Hip</th>
-                                                <th className="px-6 py-5 italic text-center">Thigh</th>
-                                                <th className="px-6 py-5 italic text-center">Inseam</th>
+                                                <th className="px-6 py-6 italic border-r border-white/10">{t('size')}</th>
+                                                <th className="px-4 py-6 italic text-center">A {t('waist').split(' ')[1] || t('waist')}</th>
+                                                <th className="px-4 py-6 italic text-center">B {t('hip').split(' ')[1] || t('hip')}</th>
+                                                <th className="px-4 py-6 italic text-center">C {t('thigh').split(' ')[1] || t('thigh')}</th>
+                                                <th className="px-4 py-6 italic text-center">D {t('inseam')}</th>
                                             </tr>
                                         )}
                                     </thead>
@@ -179,8 +228,8 @@ const SizeChartPage = () => {
                                     <CheckCircle2 size={16} />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-[10px] font-black uppercase text-zinc-900 tracking-widest leading-none pt-1">Pro-Tip Sizing</p>
-                                    <p className="text-[10px] font-medium text-muted leading-relaxed">Jika ukuran Anda berada di antara dua pilihan, pilih yang lebih besar untuk fit yang lebih santai (Oversized), atau pilih yang lebih kecil untuk tampilan yang lebih ramping.</p>
+                                    <p className="text-[10px] font-black uppercase text-zinc-900 tracking-widest leading-none pt-1">{t('proTipSizing')}</p>
+                                    <p className="text-[10px] font-medium text-muted leading-relaxed">{t('proTipSizingDesc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -195,14 +244,14 @@ const SizeChartPage = () => {
                     <div className="h-0.5 w-12 bg-zinc-100" />
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-black tracking-tighter uppercase italic text-zinc-900">
-                    Masih Bingung <span className="text-accent underline decoration-accent/10">Memilih?</span>
+                    {t('stillConfused').split(' ')[0]} <span className="text-accent underline decoration-accent/10">{t('stillConfused').split(' ').slice(1).join(' ')}</span>
                 </h2>
                 <p className="max-w-2xl mx-auto text-sm text-muted font-medium uppercase tracking-tight">
-                    Chat dengan Concierge JINISO kami melalui tombol bantuan di pojok kanan bawah untuk rekomendasi personal berdasarkan tinggi dan berat badan Anda.
+                    {t('stillConfusedDesc')}
                 </p>
                 <div className="pt-4 flex justify-center">
                     <Link href="/products" className="bg-zinc-900 text-white px-10 py-5 text-[10px] font-black uppercase tracking-[0.3em] hover:bg-accent transition-all shadow-xl">
-                        Kembali Berbelanja
+                        {t('backToShopping')}
                     </Link>
                 </div>
             </div>

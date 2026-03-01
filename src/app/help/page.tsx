@@ -8,7 +8,7 @@ import { ChevronRight } from 'lucide-react';
 
 interface FAQItemProps {
     question: string;
-    answer: string;
+    answer: React.ReactNode;
     isOpen: boolean;
     onClick: () => void;
 }
@@ -27,12 +27,12 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
                 />
             </button>
             <div
-                className={`transition-all duration-300 ease-in-out bg-zinc-50 ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+                className={`transition-all duration-300 ease-in-out bg-zinc-50 ${isOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
                     } overflow-hidden`}
             >
-                <p className="px-6 py-5 text-sm font-medium text-muted leading-relaxed">
+                <div className="px-6 py-5 text-sm font-medium text-muted leading-relaxed">
                     {answer}
-                </p>
+                </div>
             </div>
         </div>
     );
@@ -80,8 +80,21 @@ export default function HelpPage() {
             title: t('faqProduct'),
             icon: <Sparkles size={20} className="text-accent" />,
             items: [
-                { q: t('faqProductQ1'), a: t('faqProductA1') },
-                { q: 'What is the sizing like?', a: 'Most of our garments feature a relaxed, oversized fit typical of streetwear. Consult the size guide on each product page.' },
+                {
+                    q: t('faqProductQ1'),
+                    a: (
+                        <div className="space-y-4">
+                            <p>{t('faqProductA1')}</p>
+                            <Link
+                                href="/size-chart"
+                                className="inline-flex items-center space-x-2 bg-zinc-900 text-white px-6 py-3 rounded-xl hover:bg-accent transition-all text-[10px] font-black uppercase tracking-widest shadow-xl"
+                            >
+                                <span>{t('chatSizeChartBtn')}</span>
+                                <ChevronRight size={14} />
+                            </Link>
+                        </div>
+                    )
+                },
                 { q: 'How often do you restock items?', a: 'Core essentials are restocked monthly. Seasonal pieces are limited edition and typically not restocked once sold out.' }
             ]
         }

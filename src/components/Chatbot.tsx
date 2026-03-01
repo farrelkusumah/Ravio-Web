@@ -118,7 +118,7 @@ const Chatbot = () => {
             responseKey = 'chatResponseTrack';
         } else if (lowerText.includes('size') || lowerText.includes('ukuran') || lowerText.includes('サイズ')) {
             responseKey = 'chatResponseSizing';
-            link = { label: 'Lihat Size Chart', href: '/size-chart' };
+            link = { label: t('chatSizeChartBtn'), href: '/size-chart' };
         } else if (lowerText.includes('store') || lowerText.includes('toko') || lowerText.includes('店舗')) {
             responseKey = 'chatResponseStore';
         } else if (lowerText.includes('help') || lowerText.includes('bantuan') || lowerText.includes('ヘルプ')) {
