@@ -173,7 +173,7 @@ const Chatbot = () => {
                                 <Bot size={20} className="text-white" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-sm tracking-tight uppercase italic">JINISO Concierge</h3>
+                                <h3 className="font-bold text-sm tracking-tight uppercase italic">Live Chat</h3>
                                 <div className="flex items-center space-x-1.5 pt-0.5">
                                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                                     <span className="text-[10px] font-bold opacity-60 uppercase tracking-widest">Active Support</span>
