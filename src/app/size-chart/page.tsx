@@ -176,20 +176,20 @@ const SizeChartPage = () => {
                                 </h3>
                             </div>
 
-                            <div className="overflow-hidden border border-zinc-100 rounded-2xl shadow-sm">
-                                <table className="w-full text-left text-[10px] uppercase tracking-widest font-black">
+                            <div className="overflow-x-auto border border-zinc-100 rounded-2xl shadow-sm">
+                                <table className="w-full text-left text-[10px] uppercase tracking-widest font-black min-w-[600px] sm:min-w-0">
                                     <thead className="bg-zinc-900 text-white">
                                         {activeCategory === 'Tops' ? (
                                             <tr>
-                                                <th className="px-6 py-6 italic border-r border-white/10">{t('size')}</th>
-                                                <th className="px-4 py-6 italic text-center">A {t('bodyLength').split(' ')[1]}</th>
-                                                <th className="px-4 py-6 italic text-center">B {t('bodyWidth').split(' ')[1]}</th>
-                                                <th className="px-4 py-6 italic text-center">C {t('shoulderWidth').split(' ')[0]}</th>
-                                                <th className="px-4 py-6 italic text-center">D {t('sleeveLength').split(' ')[1]}</th>
+                                                <th className="px-6 py-6 italic border-r border-white/10 shrink-0">{t('size')}</th>
+                                                <th className="px-4 py-6 italic text-center">A {t('bodyLength').split(' ')[1] || t('bodyLength')}</th>
+                                                <th className="px-4 py-6 italic text-center">B {t('bodyWidth').split(' ')[1] || t('bodyWidth')}</th>
+                                                <th className="px-4 py-6 italic text-center">C {t('shoulderWidth').split(' ')[0] || t('shoulderWidth')}</th>
+                                                <th className="px-4 py-6 italic text-center">D {t('sleeveLength').split(' ')[1] || t('sleeveLength')}</th>
                                             </tr>
                                         ) : (
                                             <tr>
-                                                <th className="px-6 py-6 italic border-r border-white/10">{t('size')}</th>
+                                                <th className="px-6 py-6 italic border-r border-white/10 shrink-0">{t('size')}</th>
                                                 <th className="px-4 py-6 italic text-center">A {t('waist').split(' ')[1] || t('waist')}</th>
                                                 <th className="px-4 py-6 italic text-center">B {t('hip').split(' ')[1] || t('hip')}</th>
                                                 <th className="px-4 py-6 italic text-center">C {t('thigh').split(' ')[1] || t('thigh')}</th>

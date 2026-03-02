@@ -63,8 +63,8 @@ export default function HelpPage() {
             icon: <Package size={20} className="text-accent" />,
             items: [
                 { q: t('faqShippingQ1'), a: t('faqShippingA1') },
-                { q: 'Do you offer international shipping?', a: 'Currently, JINISO focuses on domestic shipping within Indonesia. Stay tuned for global expansion updates.' },
-                { q: 'How can I change my delivery address?', a: 'You can update your primary residence in your Account settings. For active orders, please contact concierge support immediately.' }
+                { q: t('faqShippingQ2'), a: t('faqShippingA2') },
+                { q: t('faqShippingQ3'), a: t('faqShippingA3') }
             ]
         },
         {
@@ -72,8 +72,8 @@ export default function HelpPage() {
             icon: <RefreshCw size={20} className="text-accent" />,
             items: [
                 { q: t('faqReturnsQ1'), a: t('faqReturnsA1') },
-                { q: 'How do I start an exchange process?', a: 'Navigate to your Order History, select the item, and choose "Request Exchange". A shipping label will be provided.' },
-                { q: 'Are sale items eligible for return?', a: 'Items purchased during special promotional periods are final sale unless deemed faulty upon arrival.' }
+                { q: t('faqReturnsQ2'), a: t('faqReturnsA2') },
+                { q: t('faqReturnsQ3'), a: t('faqReturnsA3') }
             ]
         },
         {
@@ -95,7 +95,7 @@ export default function HelpPage() {
                         </div>
                     )
                 },
-                { q: 'How often do you restock items?', a: 'Core essentials are restocked monthly. Seasonal pieces are limited edition and typically not restocked once sold out.' }
+                { q: t('faqProductQ2'), a: t('faqProductA2') }
             ]
         }
     ];
@@ -137,7 +137,7 @@ export default function HelpPage() {
                     {/* Sidebar / Quick Links */}
                     <div className="w-full md:w-1/3 space-y-8 animate-fade-in-up">
                         <div className="bg-white p-6 md:p-8 rounded-2xl border border-zinc-200 shadow-sm sticky top-24">
-                            <h3 className="text-lg font-bold uppercase tracking-tight italic mb-6 border-b border-zinc-100 pb-4">Categories</h3>
+                            <h3 className="text-lg font-bold uppercase tracking-tight italic mb-6 border-b border-zinc-100 pb-4">{t('categories')}</h3>
                             <div className="space-y-4">
                                 {faqSections.map((section, idx) => (
                                     <div key={idx} onClick={() => handleCategoryClick(idx)} className="flex items-center space-x-3 text-sm font-bold text-muted hover:text-accent transition-colors cursor-pointer group">
@@ -150,7 +150,7 @@ export default function HelpPage() {
                             </div>
 
                             <div className="mt-10 pt-6 border-t border-zinc-100 space-y-4">
-                                <p className="text-xs font-bold text-zinc-900 uppercase tracking-widest">Still need help?</p>
+                                <p className="text-xs font-bold text-zinc-900 uppercase tracking-widest">{t('stillNeedHelp')}</p>
                                 <button onClick={() => setIsChatOpen(true)} className="w-full py-3 bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-accent transition-all">
                                     {t('chatHuman')}
                                 </button>
