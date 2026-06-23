@@ -1,6 +1,9 @@
 # Ravio Web — Seamless Customer Experience
 
-Ravio (formerly JINISO) is a premium, localized e-commerce web application built using Next.js and Tailwind CSS. It is designed to deliver a seamless shopping experience for premium denim products, bridging online exploration with in-store experiences.
+Ravio is a premium, localized e-commerce web application built using Next.js and Tailwind CSS. It is designed to deliver a seamless shopping experience for premium denim products, bridging online exploration with in-store experiences.
+
+> [!NOTE]
+> This online store demo was built and developed by **Farrel Kusumawardhana**.
 
 ## 🌟 Key Features
 
