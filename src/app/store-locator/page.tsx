@@ -26,7 +26,7 @@ export default function StoreLocatorPage() {
                 <div className="max-w-7xl mx-auto relative z-10 text-center space-y-6">
                     <div className="inline-flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-accent mb-4">
                         <MapPin size={14} />
-                        <span>JINISO Boutiques</span>
+                        <span>RAVIO Boutiques</span>
                     </div>
                     <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter uppercase italic">
                         {t('storeLocator')}

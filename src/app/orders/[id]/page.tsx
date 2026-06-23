@@ -174,7 +174,7 @@ const OrderDetailPage = ({ params }: PageProps) => {
                                 <div className="absolute left-[15px] top-6 bottom-6 w-0.5 bg-zinc-100" />
                                 {[
                                     { status: 'In Transit', location: 'DC Hub Jakarta Timur', date: 'Feb 22, 2026 - 14:00', desc: 'Paket sedang transit di pusat distribusi Jakarta Timur.' },
-                                    { status: 'Item Picked Up', location: 'Gudang JINISO', date: 'Feb 22, 2026 - 10:30', desc: 'Paket telah diserahterimakan ke kurir ekspedisi.' },
+                                    { status: 'Item Picked Up', location: 'Gudang RAVIO', date: 'Feb 22, 2026 - 10:30', desc: 'Paket telah diserahterimakan ke kurir ekspedisi.' },
                                     { status: 'Order Processed', location: 'System', date: 'Feb 21, 2026 - 18:45', desc: 'Pesanan telah diverifikasi dan siap untuk dikirim.' }
                                 ].map((step, idx) => (
                                     <div key={idx} className="flex gap-8 sm:gap-12 relative group tracking-step-hover p-4 sm:p-6 rounded-sm">
@@ -308,7 +308,7 @@ const OrderDetailPage = ({ params }: PageProps) => {
                             <div className="space-y-4">
                                 <div className="space-y-1">
                                     <p className="text-[9px] font-bold text-muted/60 uppercase tracking-widest">Sender / Warehouse</p>
-                                    <p className="text-lg font-bold uppercase italic text-black leading-none">JINISO Warehouse</p>
+                                    <p className="text-lg font-bold uppercase italic text-black leading-none">RAVIO Warehouse</p>
                                 </div>
                                 <div className="text-sm font-medium text-zinc-600 leading-relaxed font-serif opacity-80">
                                     <p>Kawasan Industri Pulogadung</p>

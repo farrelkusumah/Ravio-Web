@@ -31,8 +31,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     // Initialize from LocalStorage or Data
     useEffect(() => {
-        const savedUser = localStorage.getItem('jiniso_user');
-        const savedTimeline = localStorage.getItem('jiniso_timeline');
+        const savedUser = localStorage.getItem('ravio_user');
+        const savedTimeline = localStorage.getItem('ravio_timeline');
 
         if (savedUser) {
             setUser(JSON.parse(savedUser));
@@ -40,7 +40,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         if (savedTimeline) {
             setTimeline(JSON.parse(savedTimeline));
         }
-        const savedLang = localStorage.getItem('jiniso_lang') as Language;
+        const savedLang = localStorage.getItem('ravio_lang') as Language;
         if (savedLang) {
             setLang(savedLang);
         }
@@ -49,18 +49,18 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     // Sync with LocalStorage
     useEffect(() => {
         if (user) {
-            localStorage.setItem('jiniso_user', JSON.stringify(user));
+            localStorage.setItem('ravio_user', JSON.stringify(user));
         } else {
-            localStorage.removeItem('jiniso_user');
+            localStorage.removeItem('ravio_user');
         }
     }, [user]);
 
     useEffect(() => {
-        localStorage.setItem('jiniso_timeline', JSON.stringify(timeline));
+        localStorage.setItem('ravio_timeline', JSON.stringify(timeline));
     }, [timeline]);
 
     useEffect(() => {
-        localStorage.setItem('jiniso_lang', lang);
+        localStorage.setItem('ravio_lang', lang);
     }, [lang]);
 
     const t = (key: keyof typeof translations['EN']) => {

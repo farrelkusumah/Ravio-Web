@@ -329,8 +329,8 @@ const generatePaymentTimeline = (orderDateStr: string): TrackingStep[] => {
 
 export const INITIAL_USER: User = {
     id: 'u1',
-    name: 'Dini Cahyo',
-    email: 'dini.cahyo@example.com',
+    name: 'Ravio User',
+    email: 'ravio.user@example.com',
     phone: '+62 812 3456 7890',
     viewedProducts: ['p-1', 'p-2'],
     cartItems: [],
@@ -376,8 +376,8 @@ export const INITIAL_USER: User = {
 
 export const INITIAL_ADMIN: User = {
     id: 'u-admin',
-    name: 'Admin Jiniso',
-    email: 'admin@jiniso.co.id',
+    name: 'Admin Ravio',
+    email: 'admin@ravio.co.id',
     phone: '+62 811 0000 0000',
     viewedProducts: [],
     cartItems: [],

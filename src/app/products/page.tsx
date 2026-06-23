@@ -109,7 +109,7 @@ const ProductsPage = () => {
     return (
         <Suspense fallback={
             <div className="p-24 text-center space-y-6 animate-pulse">
-                <div className="text-4xl font-bold tracking-[0.2em] text-zinc-100 italic uppercase">JINISO</div>
+                <div className="text-4xl font-bold tracking-[0.2em] text-zinc-100 italic uppercase">RAVIO</div>
                 <p className="text-zinc-400 font-medium tracking-widest uppercase text-xs">Curating your experience...</p>
             </div>
         }>

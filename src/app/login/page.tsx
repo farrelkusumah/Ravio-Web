@@ -30,7 +30,7 @@ export default function LoginPage() {
                 login(INITIAL_ADMIN);
                 router.push('/admin');
             } else {
-                setError('Invalid credentials. Hint: use jiniso.admin/adminjiniso123 or dini.cahyo/dincay123');
+                setError('Invalid credentials. Hint: use ravio.admin/adminravio123 or ravio.user/userravio123');
                 setIsLoading(false);
             }
         }, 1000);
@@ -47,7 +47,7 @@ export default function LoginPage() {
             <div className="w-full max-w-md z-10 animate-fade-in-up">
                 <div className="text-center mb-10 space-y-4">
                     <Link href="/" className="inline-block">
-                        <h1 className="text-4xl font-bold tracking-[0.2em] text-white">JINISO</h1>
+                        <h1 className="text-4xl font-bold tracking-[0.2em] text-white">RAVIO</h1>
                     </Link>
                     <p className="text-zinc-400 font-medium tracking-widest uppercase text-xs">
                         Login

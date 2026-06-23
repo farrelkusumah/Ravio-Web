@@ -245,10 +245,10 @@ export default function Home() {
             <div className="space-y-4">
               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-accent font-mono">Join The Club</span>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter uppercase italic text-zinc-900 leading-none">
-                @JINISO.ID ON GRAM
+                @RAVIO.ID ON GRAM
               </h2>
             </div>
-            <a href="https://www.instagram.com/jiniso.id/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-900 border-b-2 border-zinc-900 pb-1 hover:text-accent hover:border-accent transition-all group">
+            <a href="https://www.instagram.com/ravio.id/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-900 border-b-2 border-zinc-900 pb-1 hover:text-accent hover:border-accent transition-all group">
               <span>Follow Us</span>
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-2" />
             </a>

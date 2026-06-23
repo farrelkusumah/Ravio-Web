@@ -188,7 +188,7 @@ const CartPage = () => {
                                 <div className="p-6 bg-zinc-50 border border-zinc-100 space-y-6">
                                     <div className="flex items-center justify-between">
                                         <span className="text-sm font-bold uppercase tracking-tighter italic text-zinc-900">BCA Virtual Account</span>
-                                        <div className="text-accent text-xs font-bold italic uppercase tracking-widest border-b border-accent/20">Official JINISO</div>
+                                        <div className="text-accent text-xs font-bold italic uppercase tracking-widest border-b border-accent/20">Official RAVIO</div>
                                     </div>
                                     <div className="space-y-2">
                                         <p className="text-[9px] font-bold uppercase tracking-widest text-muted/60">Transfer Number</p>

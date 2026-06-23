@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JINISO | Seamless Customer Experience",
-  description: "Experience the continuity of JINISO premium denim across all touchpoints.",
+  title: "RAVIO | Seamless Customer Experience",
+  description: "Experience the continuity of RAVIO premium denim across all touchpoints.",
 };
 
 export default function RootLayout({
