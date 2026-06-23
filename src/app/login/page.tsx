@@ -114,10 +114,22 @@ export default function LoginPage() {
                         </button>
                     </form>
 
-                    <div className="pt-4 text-center">
-                        <p className="text-zinc-600 text-[10px] uppercase tracking-widest font-bold">
-                            Don't have credentials? <span className="text-accent underline cursor-pointer">Contact Support</span>
+                    <div className="pt-4 text-center space-y-4">
+                        <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold">
+                            Demo credentials
                         </p>
+                        <div className="grid gap-3 text-left text-zinc-300 text-[12px]">
+                            <div className="rounded-2xl bg-zinc-900/70 border border-white/10 p-3">
+                                <p className="text-[10px] uppercase tracking-[0.3em] text-zinc-500">Admin</p>
+                                <p><span className="font-semibold">ID:</span> ravio.admin</p>
+                                <p><span className="font-semibold">Pass:</span> adminravio123</p>
+                            </div>
+                            <div className="rounded-2xl bg-zinc-900/70 border border-white/10 p-3">
+                                <p className="text-[10px] uppercase tracking-[0.3em] text-zinc-500">Regular User</p>
+                                <p><span className="font-semibold">ID:</span> ravio.user</p>
+                                <p><span className="font-semibold">Pass:</span> userravio123</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

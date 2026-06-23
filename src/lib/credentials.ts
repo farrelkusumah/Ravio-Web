@@ -1,5 +1,7 @@
 // This file contains static credentials for the RAVIO login system.
-// Fill in your desired username and password here.
+// Demo credentials:
+// Admin: id = ravio.admin, pass = adminravio123
+// Regular User: id = ravio.user, pass = userravio123
 
 export const STATIC_CREDENTIALS = {
     username: 'ravio.user',
